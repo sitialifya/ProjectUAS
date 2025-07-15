@@ -1,23 +1,39 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Katalog Sepatu</title>
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
+  <!-- Halaman Pilihan Role -->
+  <div class="login-selection fade-in" id="roleSelector">
+    <h2>Masuk Sebagai</h2>
+    <button onclick="selectRole('user')">Pembeli</button>
+    <button onclick="selectRole('admin')">Admin</button>
+  </div>
+
+  <!-- Halaman Login Admin -->
+  <div class="login-form hidden fade-in" id="adminLogin">
+    <h2>Login Admin</h2>
+    <input type="text" id="adminUser" placeholder="Username" />
+    <input type="password" id="adminPass" placeholder="Password" />
+    <button onclick="loginAdmin()">Login</button>
+    <p id="adminLoginMsg" style="color:red;"></p>
+  </div>
+
   <!-- Halaman Pembeli -->
-  <div class="container" id="userSection">
+  <div class="container hidden" id="userSection">
     <h2>Katalog Sepatu</h2>
     <button onclick="showCart()">🛒 Lihat Keranjang</button>
     <button onclick="backToRoleMenu()">🔙 Kembali ke Menu Masuk</button>
     <div id="productList" class="product-grid"></div>
   </div>
 
-  <!-- Halaman Keranjang -->
+  <!-- Halaman Keranjang Belanja -->
   <div class="container hidden" id="cartSection">
     <h2>Keranjang Belanja</h2>
     <div id="cartItems"></div>
@@ -57,7 +73,7 @@
 
     <div id="qrisSection" class="hidden">
       <p><strong>Silakan scan QRIS berikut untuk pembayaran:</strong></p>
-      <img src="../assets/qris.jpg" alt="QRIS" width="200" />
+      <img src="WhatsApp Image 2025-07-08 at 13.48.57_b0fd8504.jpg" alt="QRIS" width="200" />
     </div>
 
     <p id="cashWarning" style="color:red;"></p>
@@ -83,4 +99,4 @@
 
   <script src="script.js"></script>
 </body>
-</html>
+</html> 
