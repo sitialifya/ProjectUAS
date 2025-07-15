@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
+<body>
 
   <!-- Halaman Pilihan Role -->
   <div class="login-selection fade-in" id="roleSelector">
@@ -15,7 +16,33 @@
     <button onclick="selectRole('admin')">Admin</button>
   </div>
 
- 
+  <!-- Halaman Login Admin -->
+  <div class="login-form hidden fade-in" id="adminLogin">
+    <h2>Login Admin</h2>
+    <input type="text" id="adminUser" placeholder="Username" />
+    <input type="password" id="adminPass" placeholder="Password" />
+    <button onclick="loginAdmin()">Login</button>
+    <p id="adminLoginMsg" style="color:red;"></p>
+  </div>
+
+  <!-- Halaman Admin -->
+  <div class="container hidden" id="adminSection">
+    <h2>Halo Admin</h2>
+
+    <h3>Tambah Produk</h3>
+    <input type="text" id="newName" placeholder="Nama Sepatu" />
+    <input type="number" id="newPrice" placeholder="Harga" />
+    <input type="text" id="newImage" placeholder="URL Gambar" />
+    <button onclick="addProduct()">Tambah Produk</button>
+
+    <h3>Daftar Produk</h3>
+    <div id="adminProductList"></div>
+
+    <h3>Riwayat Pembelian</h3>
+    <div id="purchaseHistory"></div>
+    
+    <button onclick="logout()">Keluar</button>
+  </div>
 
   <!-- Halaman Pembeli -->
   <div class="container hidden" id="userSection">
@@ -91,4 +118,4 @@
 
   <script src="script.js"></script>
 </body>
-</html> 
+</html>
