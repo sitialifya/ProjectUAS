@@ -1,0 +1,272 @@
+/* Reset & Global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  color: #2c3e50;
+  padding: 20px;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 30px;
+  color: #273c75;
+  font-weight: 800;
+}
+
+/* Hidden Elements */
+.hidden {
+  display: none;
+}
+
+/* Container Utama */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+}
+.container:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Tombol Umum */
+button {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 10px 0;
+  background: linear-gradient(135deg, #00a8ff, #0097e6);
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 168, 255, 0.3);
+}
+button:hover {
+  background: linear-gradient(135deg, #0097e6, #00a8ff);
+  box-shadow: 0 6px 14px rgba(0, 168, 255, 0.4);
+}
+
+/* Tombol Sukses / Finish */
+#btnDownload, #btnFinish, .btn-success {
+  background: linear-gradient(to right, #44bd32, #4cd137);
+}
+#btnDownload:hover, #btnFinish:hover, .btn-success:hover {
+  background: linear-gradient(to right, #4cd137, #44bd32);
+}
+
+/* Tombol Hapus / Danger */
+.btn-danger {
+  background: linear-gradient(to right, #e84118, #c23616);
+}
+.btn-danger:hover {
+  background: linear-gradient(to right, #c23616, #e84118);
+}
+
+/* Tombol Navigasi Atas */
+.nav-button {
+  background: linear-gradient(to right, #00a8ff, #0097e6);
+  color: #fff;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.nav-button:hover {
+  background: linear-gradient(to right, #0097e6, #00a8ff);
+}
+
+/* Formulir */
+input, select, textarea {
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: 0.3s ease;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #00a8ff;
+  outline: none;
+}
+
+/* Grid Produk */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+.product-item {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 220px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
+}
+.product-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  border-color: #00a8ff;
+}
+.product-item img {
+  border-radius: 14px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+}
+.product-item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #273c75;
+  margin-bottom: 5px;
+}
+.product-item p {
+  font-size: 14px;
+  color: #636e72;
+  margin-bottom: 8px;
+}
+
+/* Section Admin */
+.admin-panel {
+  border: 2px dashed #00a8ff;
+  padding: 25px;
+  border-radius: 14px;
+  background: #f0f9ff;
+  margin-bottom: 30px;
+}
+.admin-panel h3 {
+  color: #273c75;
+  margin-bottom: 15px;
+}
+
+/* Section Checkout */
+.checkout-summary {
+  background: #fefefe;
+  border: 1px solid #dcdde1;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+.checkout-summary h3 {
+  color: #00a8ff;
+  margin-bottom: 15px;
+}
+
+/* Riwayat & Cart Item */
+.cart-item {
+  border-bottom: 1px solid #dcdde1;
+  padding: 10px 0;
+  font-size: 15px;
+  color: #2f3640;
+}
+.history-item {
+  padding: 12px;
+  border-radius: 10px;
+  background: #f1f2f6;
+  margin-bottom: 10px;
+  border-left: 4px solid #00a8ff;
+}
+
+/* Struk Pembayaran */
+#receipt p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #2f3640;
+}
+#receiptItems p {
+  font-size: 14px;
+  color: #718093;
+}
+
+/* QR Code Gambar */
+#qrisSection img {
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+}
+
+/* Login Form */
+.login-selection,
+.login-form {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 35px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.login-selection:hover,
+.login-form:hover {
+  box-shadow: 0 24px 42px rgba(0, 0, 0, 0.12);
+}
+.login-selection h2,
+.login-form h2 {
+  text-align: center;
+  color: #192a56;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 800;
+}
+.login-selection button,
+.login-form button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  background-color: #00a8ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.login-selection button:hover,
+.login-form button:hover {
+  background-color: #0097e6;
+}
+.login-form input {
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: 0.3s;
+}
+.login-form input:focus {
+  border-color: #00a8ff;
+  outline: none;
+}
+
+/* Animasi Fade In */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
