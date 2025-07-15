@@ -1,7 +1,7 @@
 const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm');
 const supabase = createClient(
-  'https://lmmiuxgdypnpjdvffxdi.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxtbWl1eGdkeXBucGpkdmZmeGRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk1MjgyMjQsImV4cCI6MjA2NTEwNDIyNH0.aXRzfjm9uZw5gTHPgs7ZxyB4RQhNposr5AwRi1dofjU'
+  'https://nvpiksaqnquxzkhhuvmf.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52cGlrc2FxbnF1eHpraGh1dm1mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgzMjU4NjQsImV4cCI6MjA2MzkwMTg2NH0.xmr7FKj7Srcz9kERNnPCBqfKwQUPcD-1eD6TqDIe5no'
 );
 
 const produkList = document.getElementById('produkList');
