@@ -270,3 +270,22 @@ input:focus, select:focus, textarea:focus {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.admin-float-btn {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #00a8ff, #0097e6);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 168, 255, 0.3);
+  transition: 0.3s ease;
+}
+.admin-float-btn:hover {
+  background: linear-gradient(135deg, #0097e6, #00a8ff);
+  box-shadow: 0 6px 14px rgba(0, 168, 255, 0.4);
+}
