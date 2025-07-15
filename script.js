@@ -2,6 +2,7 @@
 
 const SUPABASE_URL = 'https://nvpiksaqnquxzkhhuvmf.supabase.co';
 const SUPABASE_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52cGlrc2FxbnF1eHpraGh1dm1mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgzMjU4NjQsImV4cCI6MjA2MzkwMTg2NH0.xmr7FKj7Srcz9kERNnPCBqfKwQUPcD-1eD6TqDIe5no';
+
 let products = [], cart = [];
 let shippingCost = 15000;
 let shippingMethod = 'Reguler (5-6 hari)';
