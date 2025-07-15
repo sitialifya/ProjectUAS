@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pembeli</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Daftar Sepatu</h1>
+  <button onclick="showCart()">Lihat Keranjang</button>
+  <button onclick="window.location.href='index.html'">Kembali ke Menu Awal</button>
+
+
+  <div id="produkList" class="produk-grid"></div>
+
+  <div id="cartSection" class="hidden">
+    <h2>Keranjang Belanja</h2>
+    <div id="cartItems"></div>
+
+    <h3>Data Pembeli</h3>
+    <input type="text" id="namaPembeli" placeholder="Nama Pembeli" required />
+    <input type="text" id="alamat" placeholder="Alamat" required />
+    <input type="text" id="noHp" placeholder="No HP" required />
+    <select id="metodeBayar" onchange="toggleBankDropdown()">
+      <option value="" disabled selected>Pilih Metode Pembayaran</option>
+      <option value="transfer">Transfer Bank</option>
+      <option value="dana">DANA</option>
+      <option value="qris">QRIS</option>
+    </select>
+  
+    <div id="bankDropdown" class="hidden">
+      <select id="bank">
+        <option value="" disabled selected>Pilih Bank</option>
+        <option value="BCA">BCA</option>
+        <option value="BNI">BNI</option>
+        <option value="Mandiri">Mandiri</option>
+      </select>
+    </div>
+
+    <div id="vaInfo" class="hidden" style="margin-top: 1rem;"></div>
+    <div id="qrImage" class="hidden" style="margin-top: 1rem;">
+      <img id="qrCode" src="qr-code.jpg" alt="QRIS" width="200">
+    </div>
+
+    <select id="metodeKirim">
+      <option value="" disabled selected>Pilih Metode Pengiriman</option>
+      <option value="reguler">Reguler (5-6 hari) - Rp10.000</option>
+      <option value="express">Express (2-3 hari) - Rp20.000</option>
+    </select>
+
+
+    <button onclick="checkout()">Bayar & Cetak Struk</button>
+    <button onclick="printReceipt()">Cetak Struk (PDF)</button>
+    <button onclick="backToProducts()">Kembali</button>
+  </div>
+
+  <div id="receipt" class="hidden" style="background: white; padding: 1rem;">
+    <h2>Struk Pembelian</h2>
+    <div id="receiptContent"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script type="module" src="pembeli.js"></script>
+</body>
+</html>
