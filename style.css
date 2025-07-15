@@ -1,15 +1,15 @@
 body {
   font-family: sans-serif, Geneva, Arial;
   padding: 1rem;
-  background: #e0f7fa; /* biru pastel terang */
-  color: #084c61;
+  background: #f7f7f7;
+  color: #333;
   margin: 0;
-  scroll-behavior: smooth;
 }
+
 
 h1, h2 {
   text-align: center;
-  color: #084c61;
+  color: #333;
 }
 
 input, select, button {
@@ -17,19 +17,17 @@ input, select, button {
   margin: 0.4rem auto;
   width: 100%;
   max-width: 340px;
-  border: 1px solid #b2ebf2;
+  border: 1px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;
   display: block;
   font-size: 1rem;
-  background-color: #d0f0f8; /* latar input */
-  color: #084c61;
 }
 
 /* BUTTON STYLES */
 button {
-  background-color: #4fc3f7;
-  color: #ffffff;
+  background-color: #007bff;
+  color: white;
   border: none;
   font-weight: bold;
   cursor: pointer;
@@ -37,7 +35,7 @@ button {
 }
 
 button:hover {
-  background-color: #0288d1;
+  background-color: #0056b3;
 }
 
 /* PRODUK GRID & CARD */
@@ -50,7 +48,7 @@ button:hover {
 }
 
 .card {
-  background: #b3e5fc; /* biru pastel terang */
+  background: white;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   padding: 1rem;
@@ -88,10 +86,10 @@ button:hover {
 #receipt {
   margin: 2rem auto;
   max-width: 600px;
-  border: 1px solid #81d4fa;
+  border: 1px solid #ccc;
   border-radius: 8px;
   padding: 1rem;
-  background: #d0f0f8;
+  background: white;
 }
 
 #receipt h2 {
@@ -103,14 +101,18 @@ button:hover {
   margin: 0.5rem 0;
 }
 
-/* FORM GROUP STYLE */
+/* FORM GROUP STYLE (Optional Enhancement) */
 form input,
 form select,
 form button {
   margin-bottom: 1rem;
 }
 
-/* HERO SECTION */
+/* SCROLLING (nice touch) */
+body {
+  scroll-behavior: smooth;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
