@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Sepatu</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+  <!-- Halaman Pilihan Role -->
+  <div class="login-selection fade-in" id="roleSelector">
+    <h2>Masuk Sebagai</h2>
+    <button onclick="selectRole('user')">Pembeli</button>
+    <button onclick="selectRole('admin')">Admin</button>
+  </div>
+
+  <!-- Halaman Login Admin -->
+  <div class="login-form hidden fade-in" id="adminLogin">
+    <h2>Login Admin</h2>
+    <input type="text" id="adminUser" placeholder="Username" />
+    <input type="password" id="adminPass" placeholder="Password" />
+    <button onclick="loginAdmin()">Login</button>
+    <p id="adminLoginMsg" style="color:red;"></p>
+  </div>
+
+  <!-- Halaman Admin -->
+  <div class="container hidden" id="adminSection">
+    <h2>Halo Admin</h2>
+
+    <h3>Tambah Produk</h3>
+    <input type="text" id="newName" placeholder="Nama Sepatu" />
+    <input type="number" id="newPrice" placeholder="Harga" />
+    <input type="text" id="newImage" placeholder="URL Gambar" />
+    <button onclick="addProduct()">Tambah Produk</button>
+
+    <h3>Daftar Produk</h3>
+    <div id="adminProductList"></div>
+
+    <h3>Riwayat Pembelian</h3>
+    <div id="purchaseHistory"></div>
+    
+    <button onclick="logout()">Keluar</button>
+  </div>
+
+  <!-- Halaman Pembeli -->
+  <div class="container hidden" id="userSection">
+    <h2>Katalog Sepatu</h2>
+    <button onclick="showCart()">🛒 Lihat Keranjang</button>
+    <button onclick="backToRoleMenu()">🔙 Kembali ke Menu Masuk</button>
+    <div id="productList" class="product-grid"></div>
+  </div>
+
+  <!-- Halaman Keranjang Belanja -->
+  <div class="container hidden" id="cartSection">
+    <h2>Keranjang Belanja</h2>
+    <div id="cartItems"></div>
+    <p><strong>Subtotal: Rp <span id="totalPrice">0</span></strong></p>
+
+    <label for="shippingMethod">Metode Pengiriman:</label>
+    <select id="shippingMethod" onchange="updateShipping()">
+      <option value="Reguler">Reguler (5-6 hari) - Rp 10.000</option>
+      <option value="Express">Express (2-3 hari) - Rp 20.000</option>
+    </select>
+    <p><strong>Ongkir:</strong> Rp <span id="shippingCost"></span></p>
+
+    <h3>Checkout</h3>
+    <input type="text" id="buyerName" placeholder="Nama Pembeli" />
+    <input type="text" id="buyerAddress" placeholder="Alamat Pembeli" />
+    <input type="text" id="buyerPhone" placeholder="Nomor Telepon" />
+
+    <label for="paymentMethod">Metode Pembayaran:</label>
+    <select id="paymentMethod" onchange="toggleVASection()">
+      <option value="DANA">DANA</option>
+      <option value="Transfer Bank">Transfer Bank</option>
+      <option value="QRIS">QRIS</option>
+    </select>
+
+    <div id="danaVA" class="hidden">
+      <p><strong>VA DANA:</strong> <span id="danaVANumber">081280306674</span></p>
+    </div>
+
+    <div id="bankSelection" class="hidden">
+      <label for="bankType">Pilih Bank:</label>
+      <select id="bankType" onchange="showVA()">
+        <option value="BCA">BCA</option>
+        <option value="MANDIRI">MANDIRI</option>
+      </select>
+      <p><strong>VA Bank:</strong> <span id="vaNumber">-</span></p>
+    </div>
+
+    <div id="qrisSection" class="hidden">
+      <p><strong>Silakan scan QRIS berikut untuk pembayaran:</strong></p>
+      <img src="WhatsApp Image 2025-07-08 at 13.48.57_b0fd8504.jpg" alt="QRIS" width="200" />
+    </div>
+
+    <p id="cashWarning" style="color:red;"></p>
+    <button onclick="checkout()">Lanjutkan & Cetak Struk</button>
+    <button onclick="backToShop()">Kembali ke Katalog</button>
+  </div>
+
+  <!-- Halaman Struk -->
+  <div class="container hidden" id="receipt">
+    <h2>🧾 Struk Pembelian</h2>
+    <p><strong>Nama:</strong> <span id="receiptName"></span></p>
+    <p><strong>Alamat:</strong> <span id="receiptAddress"></span></p>
+    <p><strong>Telepon:</strong> <span id="receiptPhone"></span></p>
+    <p><strong>Metode:</strong> <span id="receiptMethod"></span></p>
+    <p><strong>Pengiriman:</strong> <span id="receiptShipping"></span></p>
+    <p><strong>Waktu:</strong> <span id="receiptTime"></span></p>
+    <p id="receiptVA" class="hidden"><strong>Nomor VA:</strong> <span id="receiptVANumber"></span></p>
+    <div id="receiptItems"></div>
+    <p><strong>Total: Rp <span id="receiptTotal">0</span></strong></p>
+    <button id="btnDownload" onclick="downloadReceipt()">⬇️ Unduh PDF</button>
+    <button id="btnFinish" onclick="finish()">Selesai</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
