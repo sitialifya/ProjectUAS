@@ -2,7 +2,6 @@
 
 const SUPABASE_URL = 'https://nvpiksaqnquxzkhhuvmf.supabase.co';
 const SUPABASE_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52cGlrc2FxbnF1eHpraGh1dm1mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgzMjU4NjQsImV4cCI6MjA2MzkwMTg2NH0.xmr7FKj7Srcz9kERNnPCBqfKwQUPcD-1eD6TqDIe5no';
-
 let products = [], cart = [];
 let shippingCost = 15000;
 let shippingMethod = 'Reguler (5-6 hari)';
@@ -31,18 +30,17 @@ function backToRoleMenu() {
 }
 
 function loginAdmin() {
-  function loginAdmin() {
-  const username = document.getElementById("adminUser").value;
-  const password = document.getElementById("adminPass").value;
-
-  if (username === "admin" && password === "1234") {
-    document.getElementById("adminLogin").classList.add("hidden");
-    document.getElementById("adminSection").classList.remove("hidden");
+  const user = document.getElementById('adminUser').value;
+  const pass = document.getElementById('adminPass').value;
+  if (user === 'admin@example.com' && pass === '123') {
+    document.getElementById('adminLogin').classList.add('hidden');
+    document.getElementById('adminSection').classList.remove('hidden');
+    loadAdminProducts();
+    loadPurchaseHistory();
   } else {
-    document.getElementById("adminLoginMsg").innerText = "Username atau password salah.";
+    document.getElementById('adminLoginMsg').innerText = 'Login gagal';
   }
 }
-
 
 function logout() {
   location.reload();
@@ -539,3 +537,16 @@ async function deleteProduct(id) {
     console.error("Error detail:", errorMsg);
   }
 }
+
+
+
+
+
+
+    
+
+
+
+     
+ 
+
