@@ -31,17 +31,18 @@ function backToRoleMenu() {
 }
 
 function loginAdmin() {
-  const user = document.getElementById('adminUser').value;
-  const pass = document.getElementById('adminPass').value;
-  if (user === 'admin@example.com' && pass === '123') {
-    document.getElementById('adminLogin').classList.add('hidden');
-    document.getElementById('adminSection').classList.remove('hidden');
-    loadAdminProducts();
-    loadPurchaseHistory();
+  function loginAdmin() {
+  const username = document.getElementById("adminUser").value;
+  const password = document.getElementById("adminPass").value;
+
+  if (username === "admin" && password === "1234") {
+    document.getElementById("adminLogin").classList.add("hidden");
+    document.getElementById("adminSection").classList.remove("hidden");
   } else {
-    document.getElementById('adminLoginMsg').innerText = 'Login gagal';
+    document.getElementById("adminLoginMsg").innerText = "Username atau password salah.";
   }
 }
+
 
 function logout() {
   location.reload();
